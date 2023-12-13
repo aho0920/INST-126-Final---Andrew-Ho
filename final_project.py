@@ -1,4 +1,6 @@
 # Final Project Program 
+# I want to focus on dictionaries for this final project, as I feel like from the last two consolidation assignments I worked more
+# lists and tuples.
 
 import os # importing this just in case I need this.
 import def_functions # 3.17 I created a separate python file for functions I'm using within this program.  
@@ -11,9 +13,10 @@ while True:
     print("1. Add Contact")
     print("2. View Contacts")
     print("3. Search Contacts")
-    print("4. Exit")
+    print("4. Delete Contact")
+    print("5. Exit")
 
-    choice = input("Enter your choice (1-4): ")
+    choice = input("Enter your choice (1-5): ")
 
     if count >= 4: #When count is greater than or equal to 4, then the program quits with a message.
         print("Too many invalid choices inputted, closing program.  Bye.")
@@ -34,7 +37,12 @@ while True:
         def_functions.search_contacts(phonebook, name)
         # 5.18 We are accessing the keys, to view the value in the dictionary.  In this case, we are pairing a name to a number.  
 
-    elif choice == '4': # Simple quit function.  
+    elif choice == '4':
+        name = input("Enter contact name to delete: ")
+        def_functions.delete_contact(phonebook, name)
+        # 5.11 Removing an item from a list iteratively.  
+
+    elif choice == '5': # Simple quit function.  
         print("\nThanks for using this phonebook program, bye.")
         exit()
     
