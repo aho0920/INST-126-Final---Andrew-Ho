@@ -24,7 +24,7 @@ while True:
 
     if choice == '1':
         name = input("Enter contact name: ")
-        number = input("Enter contact number: ")
+        number = def_functions.get_valid_number() # NEW function, where the phone number needs to be 10 digits.  
         def_functions.add_contact(phonebook, name, number) 
         # 5.17 Accessing the keys in a dictonary, with "name" and "number"
         # 5.19 Able to update values / add values into the dictionary.  

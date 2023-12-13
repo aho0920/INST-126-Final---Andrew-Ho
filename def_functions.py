@@ -38,3 +38,19 @@ def delete_contact(phonebook, name):
         print(f"Contact '{name}' not found in the phonebook.") 
     # I wanted to add another option which is to delete a contact that has been created.  Utilizing "del" and specifying dictionary
     # and the key we want to delete.  So specifying the name and deleting the name and data associated with that key.  
+
+def get_valid_number():
+    """Get a valid phone number from the user."""
+    while True:
+        number = input("Enter contact number (format: ***-***-****): ")
+        if validate_number(number):
+            return number
+        else:
+            print("That is an invalid phone number format!  Try again.")
+    # This function replaces the number input for adding a contact.  And it is paired with another function to ensure the length,
+    # Basically, each function needs to be 10 digits resembling a real phone number. 
+
+def validate_number(number):
+    """Validates the format of a phone number."""
+    return len(number) == 10
+    # This function checks for 10 digit phone number.  
