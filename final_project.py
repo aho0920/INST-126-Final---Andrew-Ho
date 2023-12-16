@@ -4,6 +4,7 @@
 
 import os # importing this just in case I need this.
 import def_functions # 3.17 I created a separate python file for functions I'm using within this program.  
+import json # Might be able to use this for advanced topic JSON... using file for saving contact history?  
 
 phonebook = {} # phonebook is our dictionary that we will base our project on, we have two keys, the "name" and their "number".  
 
