@@ -1,3 +1,5 @@
+import json #importing json here to use def function with json.
+
 def add_contact(phonebook, name, number):
     """Add a contact to the phonebook."""
     if name not in phonebook:
@@ -54,3 +56,25 @@ def validate_number(number):
     """Validates the format of a phone number."""
     return len(number) == 10
     # This function checks for 10 digit phone number.  
+
+def load_phonebook(filename="phonebook.json"):
+    """Load a phonebook file previously saved"""
+    try:
+        with open(filename, "r") as file: #Seen in class, filename and "r"
+            return json.load(file) # found out how to use json import, just mainly using load to load json into program, and dump to extract
+                                    # data from program into json file.  
+    except FileNotFoundError:
+        return {}
+    # This functions tries to load a phonebook saved into our project file.
+    # The phonebook file should be named "phonebook.json" as created by save function.  
+    # We are using a try / except function so that if there is no phonebook.json, then phonebook will be loaded as default dictionary. 
+    # If phonebook.json is found, then the dictionary will be loaded including saved contacts.  
+    
+def save_phonebook(phonebook, filename="phonebook.json"):
+    """Saves phonebook as a file"""
+    with open(filename, "w") as file:
+        json.dump(phonebook, file)
+    print(f"Phonebook saved to '{filename}'.")
+    # This function is used to save contacts we created in program as a json file.  
+    # I don't care about things being rewritten, so we are using "w" to overwrite the same file as phonebook.json.  
+    # This phonebook will load whatever is previously saved from last time using program.  
